@@ -14,6 +14,5 @@
             Tags = @("GitHub Actions")
             ProjectUri = 'https://github.com/rsdoherty/powershell-github-actions'
         }
-
     }
 }
