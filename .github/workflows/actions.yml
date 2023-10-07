@@ -1,0 +1,50 @@
+name: PowerShell Build Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-module-imports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Test module imports correctly
+        shell: pwsh
+        run: |
+          Import-Module .\Demo.psd1
+
+  run-unit-tests-v5:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Run unit tests in PowerShell 5
+        run: |
+          Import-Module .\Demo.psd1
+          Invoke-Pester .\Tests\Unit\ -Output Detailed
+
+  run-unit-tests-v7:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Run unit tests in PowerShell 7
+        shell: pwsh
+        run: |
+          Import-Module .\Demo.psd1
+          Invoke-Pester .\Tests\Unit\ -Output Detailed
+
+  run-script-analyzer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Run PSScriptAnalyzer
+        uses: rsdoherty/psscriptanalyzer-action@v1.2
+        with:
+          recurse: true
+          enableExit: true
+          consoleLog: true
