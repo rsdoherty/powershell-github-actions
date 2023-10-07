@@ -7,11 +7,9 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install PowerShell
-        uses: actions/setup-powershell@v2
-      - name: Test module imports
+      - uses: actions/checkout@v4
+      - name: Test module imports correctly
         run: |
           Import-Module .\Demo.psd1
