@@ -36,3 +36,13 @@ jobs:
         run: |
           Import-Module .\Demo.psd1
           Invoke-Pester .\Tests\Unit\ -Output Detailed
+
+  run-script-analyzer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Run PSScriptAnalyzer
+        uses: microsoft/psscriptanalyzer-action@v1.0
+        with:
+          recurse: true
