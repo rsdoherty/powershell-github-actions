@@ -24,4 +24,5 @@ jobs:
       - name: Test module imports correctly
         shell: pwsh
         run: |
+          Import-Module .\Demo.psd1
           Invoke-Pester .\Tests\Unit\ -Output Detailed -PassThru
