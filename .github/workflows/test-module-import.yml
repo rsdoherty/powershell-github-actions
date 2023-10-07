@@ -1,0 +1,17 @@
+name: Module Import Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install PowerShell
+        uses: actions/setup-powershell@v2
+      - name: Test module imports
+        run: |
+          Import-Module .\Demo.psd1
