@@ -45,3 +45,8 @@ jobs:
         with:
           recurse: true
           enableExit: true
+
+      - name: Run PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Invoke-ScriptAnalyzer -Path . -Recurse -EnableExit
