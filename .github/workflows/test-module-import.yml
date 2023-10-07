@@ -1,0 +1,27 @@
+name: Check module imports
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-module-imports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Test module imports correctly
+        shell: pwsh
+        run: |
+          Import-Module .\Demo.psd1
+
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+      - name: Test module imports correctly
+        shell: pwsh
+        run: |
+          Invoke-Pester .\Tests\Unit\ -Output Detailed -PassThru
