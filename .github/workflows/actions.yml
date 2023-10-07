@@ -43,6 +43,10 @@ jobs:
       - name: Checkout repository code
         uses: actions/checkout@v4
       - name: Run PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Invoke-ScriptAnalyzer -Path . -Recurse -EnableExit
+      - name: Run PSScriptAnalyzer
         uses: microsoft/psscriptanalyzer-action@v1.1
         with:
           recurse: true
