@@ -1,4 +1,4 @@
-name: Module Import Tests
+name: Check module imports
 
 on:
   pull_request:
