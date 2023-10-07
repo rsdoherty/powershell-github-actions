@@ -41,6 +41,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run PSScriptAnalyzer
-        uses: microsoft/psscriptanalyzer-action@latest
+        uses: microsoft/psscriptanalyzer-action@v1.1
         with:
           recurse: true
