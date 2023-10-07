@@ -9,7 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository code
+        uses: actions/checkout@v4
       - name: Test module imports correctly
+        shell: pwsh
         run: |
           Import-Module .\Demo.psd1
