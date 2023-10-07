@@ -47,3 +47,4 @@ jobs:
         with:
           recurse: true
           enableExit: true
+          consoleLog: true
