@@ -44,8 +44,4 @@ jobs:
         uses: microsoft/psscriptanalyzer-action@v1.1
         with:
           recurse: true
-
-      - name: Upload SARIF results file
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: results.sarif
+          enableExit: true
