@@ -48,3 +48,4 @@ jobs:
           recurse: true
           enableExit: true
           consoleLog: true
+          settings: .vscode/PSScriptAnalyzerSettings.psd1
