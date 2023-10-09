@@ -1,4 +1,4 @@
-function PSFullHelpBlockIncluded
+﻿function PSFullHelpBlockIncluded
 {
     <#
         .SYNOPSIS
@@ -31,8 +31,8 @@ function PSFullHelpBlockIncluded
                 [Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord]@{
                     RuleName = "PSFullHelpBlockIncluded"
                     Severity = "Error"
-                    Message = "The help block for the function '$($Function.Name)' is missing a SYNOPSIS."
-                    Extent = $functionAst.Extent
+                    Message  = "The help block for the function '$($Function.Name)' is missing a SYNOPSIS."
+                    Extent   = $functionAst.Extent
                 }
             }
 
@@ -41,8 +41,8 @@ function PSFullHelpBlockIncluded
                 [Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord]@{
                     RuleName = "PSFullHelpBlockIncluded"
                     Severity = "Error"
-                    Message = "The help block for the function '$($Function.Name)' is missing a DESCRIPTION."
-                    Extent = $functionAst.Extent
+                    Message  = "The help block for the function '$($Function.Name)' is missing a DESCRIPTION."
+                    Extent   = $functionAst.Extent
                 }
             }
         }
