@@ -1,5 +1,12 @@
 function PSFullHelpBlockIncluded
 {
+    <#
+        .SYNOPSIS
+        Enforces that all functions have a properly defined SYNOPSIS and DESCRIPTION.
+
+        .DESCRIPTION
+        Enforces that all functions have a properly defined SYNOPSIS and DESCRIPTION.
+    #>
     [CmdletBinding()]
     [OutputType([Microsoft.Windows.PowerShell.ScriptAnalyzer.Generic.DiagnosticRecord[]])]
     Param
